@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;80
+0&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Mukta:wght@200;300;400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Web Profits</title>
+</head>
+
+<body>
+    <header class="head">
+        <section class="contentOfHeader">
+            <header class="head1">
+                <div class="top1">
+                    <div>
+                        <img src="./images/webprofitslogo.PNG">
+                    </div>
+                    <div></div>
+                    <div class="link">
+                        <a href="#">WHAT WE DO</a>
+                    </div>
+                    <div class="link">
+                        <a href="#">WHO WE ARE</a>
+                    </div>
+                    <div class="link">
+                        <a href="#">HOW WE THINK</a>
+                    </div>
+                    <div class="link">
+                        <a href="#">CONTACT</a>
+                    </div>
+                    <a class="linklast" href="#">LET'S TALK</a>
+                </div>
+            </header>
+            <header class="head2">
+                <div class="top2">
+                    <img src="./images/webprofitslogo.PNG">
+                    <a href="#">LET'S TALK</a>
+                    <div>
+                        <img id="menu_medeuim" src="./images/menu.PNG">
+                    </div>
+                </div>
+            </header>
+            <header class="head3">
+                <div class="top3">
+                    <img id="logo" src="./images/webprofitslogo.PNG">
+                    <img id="menu_small" src="./images/menu2.PNG">
+                </div>
+            </header>
+
+        </section>
+        <div class="showmenu">
+            <img src="./images/logo9.PNG"><br /><br />
+            <a id="close" href="javascript:void(0)" class="closebtn" onclick=" closeMenuBlock()">&times;</a>
+            <div>
+                <a href="#">what we do</a>
+                <a href="#">who we are</a>
+                <a href="#">how we think</a>
+                <a href="#">contact</a>
+            </div>
+        </div>
+    </header>
+    <section class="sec1">
+        <div class="block">
+            <div class="define">
+
+                <h1>Let's talk</h1>
+                <pre id="define1">Fill out the form and we'll come to you,<br/>or give us a call to get in touch directly.</pre>
+                <p id="define2">Fill out the form and we'll come to you,or give us a call to get in touch directly.</p>
+            </div>
+            <div class="form">
+                <form class="formcontent">
+                    <div class="Row">
+                        <div class="col1">
+                            <label for="fname">First name<span>*</span></label><br>
+                            <input type="text" class="user" id="fname" name="fname" autocomplete="off" onblur="changeInput(0)"><br>
+                        </div>
+                        <div class="col2">
+                            <label for="lname">Last name<span>*</span></label><br>
+                            <input type="text" class="user" id="lname" name="lname" autocomplete="off" onblur="changeInput(1)"><br>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="col1">
+                            <label for="email">Email<span>*</span></label><br>
+                            <input type="email" id="email" name="email" class="user" onblur="changeInput(5)"><br>
+                        </div>
+                        <div class="col2">
+                            <label for="phone_number">Phone number<span>*</span></label><br>
+                            <input type="tel" class="user" id="phone_number" name="phone_number" onblur="changeInput(6)"><br>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="col1">
+                            <label for="company_name">Company_name<span>*</span></label><br>
+                            <input type="text" class="user" id="company_name" name="company_name" autocomplete="off" onblur="changeInput(2)"><br>
+                        </div>
+                        <div class="col2">
+                            <label for="company_website">Company_website<span>*</span></label>
+                            <input type="text" class="user" id="company_website" name="company_website" autocomplete="off" onblur="changeInput(3)"><br>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="col1">
+                            <label for="jop_title">Jop title<span>*</span></label><br>
+                            <input type="text" class="user" id="jop_title" name="jop_title" autocomplete="off" onblur="changeInput(4)"><br>
+                        </div>
+                        <div class="col2">
+                            <label for="company_size">Company size<span>*</span></label><br>
+                            <select name="employees" id="employees" onblur="checkError()">
+                                <option value="Please select">Please select</option>
+                                <option value="1-10 Employees">1-10 Employees</option>
+                                <option value="11-50 Employees">11-50 Employees</option>
+                                <option value="51-250 Employees">51-250 Employees</option>
+                                <option value="251-1k Employees">251-1k Employees</option>
+                                <option value="1k-5k Employees">1k-5k Employees</option>
+                                <option value="5k-10k Employees">5k-10k Employees</option>
+                                <option value="10k-50k Employees">10k-50k Employees</option>
+                                <option value="50k-100k Employees">50k-100k Employees</option>
+                                <option value="100k+ Employees">100k+ Employees</option>
+                            </select>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <p>Anything else we should know? (Optional)</p>
+                        <textarea></textarea><br />
+                        <button id="btn" class="submit">REQUEST A CALL BACK</button><br/>
+                        <div class="privacy">
+                            <div id="term">
+                                <pre><p>protected by re<span><strong>CAPTCHA</strong></span></p></pre>
+                                <pre><a>Privacy</a>-<a>Terms</a></pre>
+                            </div>
+                            <div id="logo1"></div>
+                        </div>
+                        <p id="note">We respect your privacy</p><br />
+                    </div>
+                </form>
+            </div>
+            <div class="type">
+                <div class="type1">
+                    <h1>SYDNEY</h1>
+                    <p>
+                        L28, 161 Castlereagh Street<br /> Sydney
+                        <br /> NSW 2000<br /><br /> P: +61 2 8806 6800</p>
+                </div>
+                <br />
+                <div class="type2">
+                    <h1>MELBOURNE</h1>
+                    <p>
+                        L1, 145 Russell Street<br /> Melbourne
+                        <br /> VIC 3000<br /><br /> P: +61 3 8488 7821
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec2">
+        <div>
+            <p>We are premier partners with</p>
+            <img src="./images/image1.PNG">
+        </div>
+    </section>
+    <footer class="foot">
+        <img src="./images/logo.PNG">
+        <p>&copy; 2020 Webprofits.All Rights Reserved.Privacy <span>Policy</span></p>
+    </footer>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+</body>
+
+</html>
