@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const { check, validationResult } = require('express-validator')
 let mongodb = require('mongodb').MongoClient;
-
+let db;
 const app = express()
 const port = 5000
 
@@ -45,18 +45,19 @@ app.post('/formData', [
 //take form data from client side and send them to MongoDB
 //this url to connect to mongoDB locally
 let url = 'mongodb://localhost:27017';
-//this url to connect to cloud mongoDB
-// let url = 'mongodb+srv://aseel:1234@cluster0.gtx49.mongodb.net/';
+mongodb.connect(url, function(err, client) {
+    db = client.db('test');
+});
 app.post('/send-data', (request, response) => {
     // console.log(request.body);
-    mongodb.connect(url, function(err, client) {
-        let db = client.db('test');
-        db.collection('user-data').insertOne(request.body, function(err, result) {
-            if (err) throw err;
-            console.log('Insert success!')
-            client.close();
-        });
+    db.collection('user-data').insertOne(request.body, function(err, result) {
+        if (err) {
+            console.log(err);
+            response.status(500).json({});
+        }
+        console.log('Insert success!')
     });
+
     response.status(202).json({});
 })
 
