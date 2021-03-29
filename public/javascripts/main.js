@@ -68,29 +68,23 @@ $(document).ready(function() {
         $.post(url, // url
             data, // data to be submit
             function(res, status, jqXHR) { // success callback
-                console.log("success validation");
+                console.log("success validation and data insert");
 
-                //send data to server for insert it to MongoDB
-                let url_sendto_server = "http://localhost:5000/send-data";
-                $.post(url_sendto_server,
-                    data,
-                    function(data, status, jqXHR) { // success callback
-                        console.log("successfull send data");
-                    }).fail(function(jqxhr, settings, ex) {
-                    console.log("failed");
-                });
+            }, 'json').fail(function(jqxhr, settings, status) {
 
-            }, 'json').fail(function(jqxhr, settings, ex) {
             let response = JSON.parse(jqxhr.responseText);
-            response.errors.forEach((err) => {
-                if (err.param == "employees") {
-                    selectEmployees.style.border = "1px solid red";
-                } else {
-                    const Error_Input_Value = document.getElementById(`${err.param}`);
-                    Error_Input_Value.className += "notvaild";
-                }
-            });
-
+            if (status == "Unprocessable Entity") {
+                response.errors.forEach((err) => {
+                    if (err.param == "employees") {
+                        selectEmployees.style.border = "1px solid red";
+                    } else {
+                        const Error_Input_Value = document.getElementById(`${err.param}`);
+                        Error_Input_Value.className += "notvaild";
+                    }
+                });
+            } else {
+                console.log(response.error);
+            }
         });
     });
 });
