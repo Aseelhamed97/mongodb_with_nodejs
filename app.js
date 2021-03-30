@@ -3,11 +3,9 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const { check, validationResult } = require('express-validator')
 let mongodb = require('mongodb').MongoClient;
-// const process = require('process');
 
-// const environment = process.env.NODE_ENV || 'development';
-
-console.log(deve.env.NODE_ENV);
+const environment = process.env.NODE_ENV || 'development';
+console.log(environment);
 
 const app = express()
 const port = 5000
@@ -25,12 +23,11 @@ app.get('/', (request, response) => {
 let db;
 let client;
 let url;
-// if (environment == 'development') {
-//     url = 'mongodb://localhost:27017';
-// } else {
-//     url = "mongodb+srv://aseel:1234@cluster0.gtx49.mongodb.net/";
-// }
-url = 'mongodb://localhost:27017';
+if (environment == 'production') {
+    url = 'mongodb://localhost:27017';
+} else {
+    url = "mongodb+srv://aseel:1234@cluster0.gtx49.mongodb.net/";
+}
 mongodb.connect(url, function(err, clientdb) {
     client = clientdb;
     db = client.db('test');
