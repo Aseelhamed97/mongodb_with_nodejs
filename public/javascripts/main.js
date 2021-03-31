@@ -73,7 +73,6 @@ $(document).ready(function() {
             }, 'json').fail(function(jqxhr, settings, status) {
 
             let response = JSON.parse(jqxhr.responseText);
-            console.log(status);
             if (status == "Unprocessable Entity") {
                 response.errors.forEach((err) => {
                     if (err.param == "employees") {

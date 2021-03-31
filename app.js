@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const { check, validationResult } = require('express-validator')
 let mongodb = require('mongodb').MongoClient;
-const { ppid } = require('process');
 
 const environment = process.env.NODE_ENV || 'development';
 console.log(environment);
@@ -29,7 +28,6 @@ if (environment == 'production') {
 } else {
     url = "mongodb+srv://aseel:1234@cluster0.gtx49.mongodb.net/";
 }
-url = 'mongodb://localhost:27017';
 mongodb.connect(url, function(err, clientdb) {
     client = clientdb;
     db = client.db('test');
